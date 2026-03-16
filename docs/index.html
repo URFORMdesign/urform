@@ -29,37 +29,103 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-media">
-        <img
-  src="images/hero.jpg"
-  alt="Moderne Dachterrasse mit klarer Architektur"
-  >
-        <div class="hero-overlay"></div>
+  <main class="snap-container">
+    <!-- HERO / PRODUKT 01 -->
+    <section class="panel hero-panel">
+      <div class="panel-image">
+        <img src="images/hero.jpg" alt="URFORM TERRA auf einer Dachterrasse bei Sonnenuntergang" />
+        <div class="panel-overlay"></div>
       </div>
 
-      <div class="hero-content">
-        <p class="hero-kicker">Designprodukte für Haus und Garten aus Metall</p>
+      <div class="panel-content panel-content-center">
+        <p class="eyebrow">PFLANZKÄSTEN AUS CORTENSTAHL</p>
         <h1>TERRA</h1>
-        <p class="hero-text">
-          Reduzierte Pflanzkästen mit architektonischer Klarheit –
-          gestaltet für moderne Terrassen, Gärten und Außenräume.
+        <p class="lead">
+          Klare Form. Dauerhaftes Material. Für Außenräume mit Charakter.
         </p>
-        <a class="hero-link" href="produkte.html">PRODUKTE ANSEHEN</a>
+        <a href="produkte.html" class="btn btn-outline">PRODUKTE ENTDECKEN</a>
       </div>
+
+      <div class="scroll-indicator">SCROLL</div>
     </section>
 
-    <section class="intro">
-      <div class="intro-inner">
-        <p class="section-label">URFORM</p>
-        <h2>Ruhe, Material und klare Form.</h2>
-        <p>
-          URFORM entwickelt langlebige Objekte aus Metall mit einer klaren,
-          architektonischen Designsprache. Weniger Dekoration, mehr Präsenz.
-        </p>
+    <!-- PRODUKT 02 -->
+    <section class="panel product-panel bench-panel">
+      <div class="panel-split">
+        <div class="panel-split-image">
+          <img src="images/bank.jpg" alt="Gartenbank aus Holz und Stahl" />
+        </div>
+
+        <div class="panel-split-content">
+          <p class="eyebrow">HOLZ UND STAHL</p>
+          <h2>LINEA</h2>
+          <p class="lead dark">
+            Eine reduzierte Gartenbank für ruhige Außenräume.
+            Präzise gefertigt, langlebig gedacht.
+          </p>
+          <a href="kontakt.html" class="btn btn-dark">PRODUKT ANFRAGEN</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <script>
+    (() => {
+      const panels = Array.from(document.querySelectorAll(".panel"));
+      let currentIndex = 0;
+      let isAnimating = false;
+
+      function goToPanel(index) {
+        if (index < 0 || index >= panels.length) return;
+        isAnimating = true;
+        currentIndex = index;
+
+        panels[index].scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, 900);
+      }
+
+      window.addEventListener(
+        "wheel",
+        (event) => {
+          if (window.innerWidth <= 900) return;
+          if (isAnimating) {
+            event.preventDefault();
+            return;
+          }
+
+          const threshold = 25;
+          if (Math.abs(event.deltaY) < threshold) return;
+
+          event.preventDefault();
+
+          if (event.deltaY > 0) {
+            goToPanel(currentIndex + 1);
+          } else {
+            goToPanel(currentIndex - 1);
+          }
+        },
+        { passive: false }
+      );
+
+      window.addEventListener("scroll", () => {
+        const viewportMiddle = window.scrollY + window.innerHeight / 2;
+
+        panels.forEach((panel, index) => {
+          const top = panel.offsetTop;
+          const bottom = top + panel.offsetHeight;
+
+          if (viewportMiddle >= top && viewportMiddle < bottom) {
+            currentIndex = index;
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
