@@ -11,6 +11,36 @@
   --transition: 240ms ease;
 }
 
+/* ===== LOADER ===== */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #181818;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-inner {
+  padding: 24px;
+}
+
+.loader-text {
+  font-size: clamp(2rem, 6vw, 5rem);
+  letter-spacing: 0.15em;
+  color: #fff;
+  font-weight: 300;
+  text-transform: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -45,7 +75,8 @@ a {
   inset: 0 0 auto 0;
   z-index: 20;
   height: var(--header-height);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0));
+  background: transparent;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 .header-inner {
@@ -107,13 +138,20 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  transform: scale(1.04);
+  transition: transform 6s ease;
 }
 
 .panel-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.10) 26%, rgba(0, 0, 0, 0.18));
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.22),
+      rgba(0, 0, 0, 0.1) 26%,
+      rgba(0, 0, 0, 0.18)
+    );
 }
 
 .panel-content {
@@ -145,9 +183,9 @@ a {
 .hero-panel h1 {
   margin: 0;
   font-size: clamp(5rem, 13vw, 10rem);
-  font-weight: 300;
+  font-weight: 200;
   line-height: 0.92;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 
 .lead {
@@ -190,7 +228,7 @@ a {
 
 .btn-outline {
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(6px);
 }
@@ -336,5 +374,9 @@ a {
 
   .panel-split-content h2 {
     font-size: 2.5rem;
+  }
+
+  .loader-text {
+    letter-spacing: 0.1em;
   }
 }

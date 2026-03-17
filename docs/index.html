@@ -16,7 +16,11 @@
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body><div class="loader">
+  <div class="loader-inner">
+    <span class="loader-text">URFORM.design</span>
+  </div>
+</div>
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">URFORM</a>
@@ -127,5 +131,11 @@
       });
     })();
   </script>
-</body>
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.querySelector(".loader").classList.add("loader-hidden");
+    }, 1200);
+  });
+</script></body>
 </html>
