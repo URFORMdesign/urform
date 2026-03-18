@@ -8,7 +8,7 @@
   --overlay: rgba(0, 0, 0, 0.24);
   --container: 1440px;
   --header-height: 88px;
-  --transition: 240ms ease;
+  --transition: 260ms ease;
 }
 
 /* ===== LOADER ===== */
@@ -38,7 +38,6 @@
   letter-spacing: 0.15em;
   color: #fff;
   font-weight: 300;
-  text-transform: none;
 }
 
 * {
@@ -105,7 +104,7 @@ a {
   font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 0.12em;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.92);
   transition: opacity var(--transition);
 }
 
@@ -148,18 +147,19 @@ a {
   background:
     linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.22),
-      rgba(0, 0, 0, 0.1) 26%,
-      rgba(0, 0, 0, 0.18)
+      rgba(0, 0, 0, 0.10),
+      rgba(0, 0, 0, 0.05) 30%,
+      rgba(0, 0, 0, 0.28) 100%
     );
 }
 
 .panel-content {
   position: relative;
   z-index: 2;
-  max-width: 980px;
-  padding: 120px 32px 64px;
-  text-align: center;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 48px 56px;
   color: #fff;
 }
 
@@ -169,32 +169,33 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .eyebrow {
-  margin: 0 0 18px;
-  font-size: 0.78rem;
+  margin: 0 0 20px;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .hero-panel h1 {
   margin: 0;
-  font-size: clamp(5rem, 13vw, 10rem);
+  font-size: clamp(4.6rem, 10vw, 8.8rem);
   font-weight: 200;
-  line-height: 0.92;
-  letter-spacing: -0.05em;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
 }
 
 .lead {
-  max-width: 760px;
-  margin: 28px auto 0;
-  font-size: clamp(1.1rem, 2vw, 1.7rem);
-  line-height: 1.45;
+  max-width: 560px;
+  margin: 26px 0 0;
+  font-size: clamp(1rem, 1.45vw, 1.28rem);
+  line-height: 1.5;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .lead.dark {
@@ -205,14 +206,14 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 238px;
-  height: 56px;
-  margin-top: 38px;
-  padding: 0 28px;
+  min-width: 220px;
+  height: 54px;
+  margin-top: 34px;
+  padding: 0 26px;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   transition:
     transform var(--transition),
@@ -228,13 +229,14 @@ a {
 
 .btn-outline {
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.10);
 }
 
 .btn-dark {
@@ -253,10 +255,10 @@ a {
   bottom: 24px;
   z-index: 2;
   transform: translateX(-50%);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.58);
 }
 
 .product-panel {
@@ -331,7 +333,11 @@ a {
   }
 
   .panel-content {
-    padding: 110px 20px 56px;
+    padding: 0 20px 36px;
+  }
+
+  .panel-content-center {
+    justify-content: center;
   }
 
   .hero-panel h1 {
@@ -339,7 +345,8 @@ a {
   }
 
   .lead {
-    font-size: 1.04rem;
+    max-width: 100%;
+    font-size: 1rem;
     line-height: 1.5;
   }
 
