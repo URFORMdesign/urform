@@ -17,17 +17,11 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="subpage">
-  <header class="site-header site-header-solid">
+  <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo-wrap" aria-label="URFORM Startseite">
-        <img
-          src="images/Logo_transp_final_black.png"
-          alt="URFORM"
-          class="logo-image logo-image-dark"
-        />
-      </a>
+      <a href="index.html" class="logo">URFORM</a>
 
-      <nav class="main-nav main-nav-dark" aria-label="Hauptnavigation">
+      <nav class="main-nav" aria-label="Hauptnavigation">
         <a href="produkte.html" class="is-active">PRODUKTE</a>
         <a href="info.html">INFO</a>
         <a href="kontakt.html">KONTAKT</a>
@@ -36,13 +30,18 @@
   </header>
 
   <main>
-    <section class="subhero subhero-light">
-      <div class="container-narrow">
-        <p class="page-kicker">PRODUKTE</p>
-        <h1 class="page-title">Formen für Außenräume.</h1>
-        <p class="page-intro">
-          URFORM entwickelt reduzierte Produkte für Terrasse, Garten und Architektur.
-          Gefertigt aus langlebigen Materialien, gedacht für ruhige, klare Umgebungen.
+    <section class="subhero subhero-image">
+      <div class="subhero-bg">
+        <img src="images/hero.jpg" alt="URFORM Produkte auf moderner Terrasse" />
+        <div class="subhero-overlay"></div>
+      </div>
+
+      <div class="container-narrow subhero-content subhero-content-light">
+        <p class="page-kicker page-kicker-light">PRODUKTE</p>
+        <h1 class="page-title page-title-light">Formen für Außenräume.</h1>
+        <p class="page-intro page-intro-light">
+          Reduzierte Produkte für Terrasse, Garten und Architektur.
+          Langlebige Materialien, klare Linien und eine ruhige Präsenz.
         </p>
       </div>
     </section>
@@ -60,8 +59,9 @@
           <p class="feature-label">PFLANZKÄSTEN AUS CORTENSTAHL</p>
           <h2>TERRA</h2>
           <p class="feature-text">
-            TERRA ist ein Pflanzkasten mit klarer Geometrie und architektonischer Präsenz.
-            Die Oberfläche aus Cortenstahl entwickelt mit der Zeit eine lebendige Patina.
+            TERRA ist ein Pflanzkasten mit klarer Geometrie und architektonischer
+            Präsenz. Die Oberfläche aus Cortenstahl entwickelt mit der Zeit eine
+            lebendige Patina.
           </p>
 
           <div class="spec-list">
@@ -154,5 +154,28 @@
       </div>
     </section>
   </main>
+
+  <script>
+    (() => {
+      const header = document.querySelector(".site-header");
+
+      function updateHeader() {
+        if (!header) return;
+
+        if (window.scrollY > 50) {
+          header.style.background = "rgba(0, 0, 0, 0.22)";
+          header.style.backdropFilter = "blur(10px)";
+          header.style.webkitBackdropFilter = "blur(10px)";
+        } else {
+          header.style.background = "transparent";
+          header.style.backdropFilter = "none";
+          header.style.webkitBackdropFilter = "none";
+        }
+      }
+
+      window.addEventListener("scroll", updateHeader);
+      updateHeader();
+    })();
+  </script>
 </body>
 </html>
