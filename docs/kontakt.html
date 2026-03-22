@@ -17,17 +17,11 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="subpage">
-  <header class="site-header site-header-solid">
+  <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo-wrap" aria-label="URFORM Startseite">
-        <img
-          src="images/Logo_transp_final_black.png"
-          alt="URFORM"
-          class="logo-image logo-image-dark"
-        />
-      </a>
+      <a href="index.html" class="logo">URFORM</a>
 
-      <nav class="main-nav main-nav-dark" aria-label="Hauptnavigation">
+      <nav class="main-nav" aria-label="Hauptnavigation">
         <a href="produkte.html">PRODUKTE</a>
         <a href="info.html">INFO</a>
         <a href="kontakt.html" class="is-active">KONTAKT</a>
@@ -36,11 +30,16 @@
   </header>
 
   <main>
-    <section class="subhero subhero-light">
-      <div class="container-narrow">
-        <p class="page-kicker">KONTAKT</p>
-        <h1 class="page-title">Produktanfragen und Projekte.</h1>
-        <p class="page-intro">
+    <section class="subhero subhero-image">
+      <div class="subhero-bg">
+        <img src="images/bank.jpg" alt="URFORM Kontakt und Projektanfragen" />
+        <div class="subhero-overlay"></div>
+      </div>
+
+      <div class="container-narrow subhero-content subhero-content-light">
+        <p class="page-kicker page-kicker-light">KONTAKT</p>
+        <h1 class="page-title page-title-light">Produktanfragen und Projekte.</h1>
+        <p class="page-intro page-intro-light">
           Für Anfragen zu Produkten, Größen, Maßanfertigungen oder Projekten
           freuen wir uns über Ihre Nachricht.
         </p>
@@ -56,9 +55,7 @@
             class="brand-mark-side"
           />
           <h2>URFORM</h2>
-          <p>
-            Designprodukte für Haus und Garten aus Metall.
-          </p>
+          <p>Designprodukte für Haus und Garten aus Metall.</p>
 
           <div class="contact-info-block">
             <p><strong>E-Mail</strong><br />info@urform.design</p>
@@ -114,5 +111,34 @@
       </div>
     </section>
   </main>
+
+  <script>
+    (() => {
+      const header = document.querySelector(".site-header");
+
+      function updateHeader() {
+        if (!header) return;
+
+        if (window.scrollY > 50) {
+          header.style.background = "rgba(0, 0, 0, 0.22)";
+          header.style.backdropFilter = "blur(10px)";
+          header.style.webkitBackdropFilter = "blur(10px)";
+        } else {
+          header.style.background = "transparent";
+          header.style.backdropFilter = "none";
+          header.style.webkitBackdropFilter = "none";
+        }
+      }
+
+      window.addEventListener("scroll", updateHeader);
+      updateHeader();
+    })();
+  </script>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
 </body>
 </html>
