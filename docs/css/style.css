@@ -800,43 +800,72 @@ header img,
 }
 
 /* ===== RECHTLICHE SEITEN ===== */
-.legal-section {
-  padding: 160px 0 100px;
-  background: #fff;
+/* ===== LEGAL DARK ===== */
+.legal-dark {
+  background: #181818;
+  color: #fff;
 }
 
-.legal-section h1 {
-  margin: 0 0 28px;
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  font-weight: 280;
-  line-height: 1;
-  letter-spacing: -0.04em;
+.legal-dark .legal-section {
+  background: #181818;
 }
 
-.legal-section h2 {
-  margin: 40px 0 14px;
-  font-size: 1.28rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+.legal-dark .legal-section h1 {
+  color: #fff;
 }
 
-.legal-section p,
-.legal-section li {
-  margin: 0 0 14px;
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--text-soft);
+.legal-dark .legal-section h2 {
+  color: rgba(255, 255, 255, 0.92);
 }
 
-.legal-section ul {
-  margin: 0 0 14px 20px;
-  padding: 0;
+.legal-dark .legal-section p,
+.legal-dark .legal-section li {
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.legal-section strong {
-  color: var(--text);
+.legal-dark .legal-section strong {
+  color: #fff;
 }
-/* ===== CONSENT ===== */
+
+.legal-dark .legal-section ul {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ===== HEADER DARK LEGAL ===== */
+.site-header-legal-dark {
+  background: rgba(24, 24, 24, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-header-legal-dark .logo {
+  color: #fff;
+}
+
+.site-header-legal-dark .main-nav a {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.site-header-legal-dark .main-nav a:hover {
+  opacity: 0.6;
+}
+
+/* ===== FOOTER DARK ===== */
+.legal-dark .site-footer {
+  background: #181818;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legal-dark .footer-inner a,
+.legal-dark .footer-link-button {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.legal-dark .footer-inner a:hover,
+.legal-dark .footer-link-button:hover {
+  color: #fff;
+}/* ===== CONSENT ===== */
 .consent-modal-open {
   overflow: hidden;
 }
