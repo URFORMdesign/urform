@@ -1218,6 +1218,25 @@ header img,
   .site-header {
     height: 76px;
   }
+  .site-header-legal {
+  background: rgba(243, 240, 234, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(24, 24, 24, 0.06);
+}
+
+.site-header-legal .logo {
+  color: var(--text);
+}
+
+.site-header-legal .main-nav a {
+  color: rgba(24, 24, 24, 0.88);
+}
+
+.site-header-legal .main-nav a:hover,
+.site-header-legal .main-nav a.is-active {
+  opacity: 0.65;
+}
 
   .header-inner {
     padding: 0 20px;
