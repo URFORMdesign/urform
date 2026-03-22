@@ -812,7 +812,7 @@ header img,
 
 /* ===== LEGAL ===== */
 .legal-section {
-  padding: 160px 0 100px;
+  padding: calc(var(--header-height) + 56px) 0 100px;
   background: #fff;
 }
 
@@ -1300,7 +1300,7 @@ header img,
   }
 
   .legal-section {
-    padding: 140px 0 80px;
+    padding: calc(var(--header-height) + 44px) 0 80px;
   }
 
   .consent-card {
@@ -1407,7 +1407,7 @@ header img,
   }
 
   .legal-section {
-    padding: 128px 0 72px;
+    padding: calc(var(--header-height) + 36px) 0 72px;
   }
 
   .legal-section h2 {
