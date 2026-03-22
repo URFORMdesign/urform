@@ -806,8 +806,13 @@ header img,
 }
 
 .brand-mark-side {
+  display: block;
   width: auto;
-  max-height: 56px;
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  margin-bottom: 24px;
 }
 
 /* ===== LEGAL ===== */
