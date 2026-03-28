@@ -36,27 +36,54 @@
   </header>
 
   <main class="snap-container">
+    <!-- HERO / MARKE -->
     <section class="panel hero-panel">
       <div class="panel-image">
         <img
           src="images/hero.jpg"
-          alt="URFORM TERRA auf einer Dachterrasse bei Sonnenuntergang"
+          alt="URFORM Dachterrasse mit Pflanzkasten bei Sonnenuntergang"
         />
         <div class="panel-overlay"></div>
       </div>
 
-      <div class="panel-content panel-content-center">
-        <p class="eyebrow">PFLANZKÄSTEN AUS CORTENSTAHL</p>
-        <h1>TERRA</h1>
-        <p class="lead">
-          Klare Form. Dauerhaftes Material. Für Außenräume mit Charakter.
+      <div class="panel-content panel-content-center panel-content-brand">
+        <img
+          src="images/Logo_svg.svg"
+          alt="URFORM"
+          class="hero-brand-logo"
+        />
+
+        <p class="hero-brand-text">
+          Designprodukte für Haus und Garten aus Metall.
+          Reduziert in der Form, präzise im Detail, entwickelt für Außenräume mit Ruhe und Charakter.
         </p>
-        <a href="produkte.html" class="btn btn-outline">PRODUKTE ENTDECKEN</a>
       </div>
 
       <div class="scroll-indicator">SCROLL</div>
     </section>
 
+    <!-- PRODUKT 01 / TERRA -->
+    <section class="panel product-panel terra-panel">
+      <div class="panel-split">
+        <div class="panel-split-image">
+          <img
+            src="images/hero.jpg"
+            alt="TERRA Pflanzkasten aus Cortenstahl auf einer Dachterrasse"
+          />
+        </div>
+
+        <div class="panel-split-content">
+          <p class="eyebrow">PFLANZKÄSTEN AUS CORTENSTAHL</p>
+          <h2>TERRA</h2>
+          <p class="lead dark">
+            Klare Form. Dauerhaftes Material. Für Außenräume mit Charakter.
+          </p>
+          <a href="produkte.html" class="btn btn-dark">PRODUKTE ENTDECKEN</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUKT 02 / LINEA -->
     <section class="panel product-panel">
       <div class="panel-split">
         <div class="panel-split-image">
@@ -70,7 +97,7 @@
           <p class="eyebrow">HOLZ UND STAHL</p>
           <h2>LINEA</h2>
           <p class="lead dark">
-            Eine schlichte Gartenbank für ruhige Außenräume.
+            Eine reduzierte Gartenbank für ruhige Außenräume.
             Präzise gefertigt, langlebig gedacht.
           </p>
           <a href="kontakt.html" class="btn btn-dark">PRODUKT ANFRAGEN</a>
@@ -78,6 +105,148 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo">URFORM</p>
+        <p class="footer-claim">
+          Designprodukte für Haus und Garten aus Metall.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <button
+          type="button"
+          class="footer-link-button"
+          data-open-consent
+          aria-haspopup="dialog"
+          aria-controls="consent-preferences"
+        >
+          Datenschutz-Einstellungen
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <div
+    class="consent-card"
+    id="consent-card"
+    role="dialog"
+    aria-labelledby="consent-title"
+    aria-describedby="consent-text"
+    aria-modal="false"
+    hidden
+  >
+    <div class="consent-card-inner">
+      <p class="consent-kicker">DATENSCHUTZ</p>
+      <h2 id="consent-title">Datenschutz-Einstellungen</h2>
+      <p id="consent-text" class="consent-text">
+        Wir verwenden notwendige Technologien für die Funktion der Website.
+        Optionale Dienste für Statistik oder externe Inhalte aktivieren wir nur
+        mit Ihrer Einwilligung.
+      </p>
+
+      <div class="consent-actions">
+        <button type="button" class="btn btn-dark btn-consent" data-consent-action="necessary">
+          Nur notwendige
+        </button>
+        <button type="button" class="btn btn-outline btn-consent btn-consent-light" data-consent-action="all">
+          Alle akzeptieren
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="consent-text-link"
+        data-open-consent
+        aria-haspopup="dialog"
+        aria-controls="consent-preferences"
+      >
+        Einstellungen
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="consent-modal"
+    id="consent-preferences"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="consent-preferences-title"
+    hidden
+  >
+    <div class="consent-modal-backdrop" data-close-consent></div>
+
+    <div class="consent-modal-panel">
+      <div class="consent-modal-head">
+        <p class="consent-kicker">DATENSCHUTZ</p>
+        <h2 id="consent-preferences-title">Einstellungen</h2>
+        <button type="button" class="consent-close" aria-label="Schließen" data-close-consent>
+          ×
+        </button>
+      </div>
+
+      <div class="consent-modal-body">
+        <p class="consent-text consent-text-dark">
+          Sie können festlegen, welche optionalen Kategorien aktiviert werden dürfen.
+          Notwendige Technologien sind immer aktiv, damit die Website technisch funktioniert.
+        </p>
+
+        <div class="consent-option consent-option-locked">
+          <div class="consent-option-copy">
+            <h3>Notwendig</h3>
+            <p>
+              Erforderlich für Grundfunktionen, Sicherheit und das Speichern Ihrer Auswahl.
+            </p>
+          </div>
+          <div class="consent-switch is-locked" aria-hidden="true">
+            <span></span>
+          </div>
+        </div>
+
+        <label class="consent-option" for="consent-analytics">
+          <div class="consent-option-copy">
+            <h3>Statistik</h3>
+            <p>
+              Für anonyme oder pseudonyme Auswertungen zur Verbesserung der Website.
+            </p>
+          </div>
+          <div class="consent-toggle-wrap">
+            <input type="checkbox" id="consent-analytics" />
+            <span class="consent-switch"><span></span></span>
+          </div>
+        </label>
+
+        <label class="consent-option" for="consent-external">
+          <div class="consent-option-copy">
+            <h3>Externe Medien</h3>
+            <p>
+              Für eingebundene Inhalte externer Anbieter, z. B. Karten, Videos oder Feeds.
+            </p>
+          </div>
+          <div class="consent-toggle-wrap">
+            <input type="checkbox" id="consent-external" />
+            <span class="consent-switch"><span></span></span>
+          </div>
+        </label>
+      </div>
+
+      <div class="consent-modal-actions">
+        <button type="button" class="btn btn-outline btn-consent-modal" data-consent-save="necessary">
+          Nur notwendige
+        </button>
+        <button type="button" class="btn btn-outline btn-consent-modal" data-consent-save="selection">
+          Auswahl speichern
+        </button>
+        <button type="button" class="btn btn-dark btn-consent-modal" data-consent-save="all">
+          Alle akzeptieren
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script>
     (() => {
@@ -169,327 +338,154 @@
 
       updateHeader();
     })();
-  </script>
-<footer class="site-footer">
-  <div class="footer-inner footer-grid">
 
-    <div class="footer-brand">
-      <p class="footer-logo">URFORM</p>
-      <p class="footer-claim">
-        Designprodukte für Haus und Garten aus Metall.
-      </p>
-    </div>
+    (() => {
+      const STORAGE_KEY = "urform_consent_v1";
+      const CONSENT_VERSION = 1;
 
-    <div class="footer-nav">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <button class="footer-link-button" data-open-consent>
-        Datenschutz-Einstellungen
-      </button>
-    </div>
+      const consentCard = document.getElementById("consent-card");
+      const consentModal = document.getElementById("consent-preferences");
+      const analyticsToggle = document.getElementById("consent-analytics");
+      const externalToggle = document.getElementById("consent-external");
 
-  </div>
-</footer>
+      const openButtons = document.querySelectorAll("[data-open-consent]");
+      const closeButtons = document.querySelectorAll("[data-close-consent]");
+      const cardActions = document.querySelectorAll("[data-consent-action]");
+      const saveActions = document.querySelectorAll("[data-consent-save]");
 
-<div
-  class="consent-card"
-  id="consent-card"
-  role="dialog"
-  aria-labelledby="consent-title"
-  aria-describedby="consent-text"
-  aria-modal="false"
-  hidden
->
-  <div class="consent-card-inner">
-    <p class="consent-kicker">DATENSCHUTZ</p>
-    <h2 id="consent-title">Datenschutz-Einstellungen</h2>
-    <p id="consent-text" class="consent-text">
-      Wir verwenden notwendige Technologien für die Funktion der Website.
-      Optionale Dienste für Statistik oder externe Inhalte aktivieren wir nur
-      mit Ihrer Einwilligung.
-    </p>
-
-    <div class="consent-actions">
-      <button type="button" class="btn btn-dark btn-consent" data-consent-action="necessary">
-        Nur notwendige
-      </button>
-      <button type="button" class="btn btn-outline btn-consent btn-consent-light" data-consent-action="all">
-        Alle akzeptieren
-      </button>
-    </div>
-
-    <button
-      type="button"
-      class="consent-text-link"
-      data-open-consent
-      aria-haspopup="dialog"
-      aria-controls="consent-preferences"
-    >
-      Einstellungen
-    </button>
-  </div>
-</div>
-
-<div
-  class="consent-modal"
-  id="consent-preferences"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="consent-preferences-title"
-  hidden
->
-  <div class="consent-modal-backdrop" data-close-consent></div>
-
-  <div class="consent-modal-panel">
-    <div class="consent-modal-head">
-      <p class="consent-kicker">DATENSCHUTZ</p>
-      <h2 id="consent-preferences-title">Einstellungen</h2>
-      <button type="button" class="consent-close" aria-label="Schließen" data-close-consent>
-        ×
-      </button>
-    </div>
-
-    <div class="consent-modal-body">
-      <p class="consent-text consent-text-dark">
-        Sie können festlegen, welche optionalen Kategorien aktiviert werden dürfen.
-        Notwendige Technologien sind immer aktiv, damit die Website technisch funktioniert.
-      </p>
-
-      <div class="consent-option consent-option-locked">
-        <div class="consent-option-copy">
-          <h3>Notwendig</h3>
-          <p>
-            Erforderlich für Grundfunktionen, Sicherheit und das Speichern Ihrer Auswahl.
-          </p>
-        </div>
-        <div class="consent-switch is-locked" aria-hidden="true">
-          <span></span>
-        </div>
-      </div>
-
-      <label class="consent-option" for="consent-analytics">
-        <div class="consent-option-copy">
-          <h3>Statistik</h3>
-          <p>
-            Für anonyme oder pseudonyme Auswertungen zur Verbesserung der Website.
-          </p>
-        </div>
-        <div class="consent-toggle-wrap">
-          <input type="checkbox" id="consent-analytics" />
-          <span class="consent-switch"><span></span></span>
-        </div>
-      </label>
-
-      <label class="consent-option" for="consent-external">
-        <div class="consent-option-copy">
-          <h3>Externe Medien</h3>
-          <p>
-            Für eingebundene Inhalte externer Anbieter, z. B. Karten, Videos oder Feeds.
-          </p>
-        </div>
-        <div class="consent-toggle-wrap">
-          <input type="checkbox" id="consent-external" />
-          <span class="consent-switch"><span></span></span>
-        </div>
-      </label>
-    </div>
-
-    <div class="consent-modal-actions">
-      <button type="button" class="btn btn-outline btn-consent-modal" data-consent-save="necessary">
-        Nur notwendige
-      </button>
-      <button type="button" class="btn btn-outline btn-consent-modal" data-consent-save="selection">
-        Auswahl speichern
-      </button>
-      <button type="button" class="btn btn-dark btn-consent-modal" data-consent-save="all">
-        Alle akzeptieren
-      </button>
-    </div>
-  </div>
-</div>
-
-<script>
-  (() => {
-    const STORAGE_KEY = "urform_consent_v1";
-    const CONSENT_VERSION = 1;
-
-    const consentCard = document.getElementById("consent-card");
-    const consentModal = document.getElementById("consent-preferences");
-    const analyticsToggle = document.getElementById("consent-analytics");
-    const externalToggle = document.getElementById("consent-external");
-
-    const openButtons = document.querySelectorAll("[data-open-consent]");
-    const closeButtons = document.querySelectorAll("[data-close-consent]");
-    const cardActions = document.querySelectorAll("[data-consent-action]");
-    const saveActions = document.querySelectorAll("[data-consent-save]");
-
-    function getStoredConsent() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return null;
-        const parsed = JSON.parse(raw);
-        if (!parsed || parsed.version !== CONSENT_VERSION) return null;
-        return parsed;
-      } catch (error) {
-        return null;
-      }
-    }
-
-    function saveConsent(consent) {
-      const payload = {
-        version: CONSENT_VERSION,
-        necessary: true,
-        analytics: !!consent.analytics,
-        external: !!consent.external,
-        updatedAt: new Date().toISOString()
-      };
-
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-      window.dispatchEvent(new CustomEvent("urform:consent-updated", { detail: payload }));
-      applyConsent(payload);
-      hideConsentCard();
-      closeConsentModal();
-    }
-
-    function showConsentCard() {
-      if (!consentCard) return;
-      consentCard.hidden = false;
-      requestAnimationFrame(() => {
-        consentCard.classList.add("is-visible");
-      });
-    }
-
-    function hideConsentCard() {
-      if (!consentCard) return;
-      consentCard.classList.remove("is-visible");
-      setTimeout(() => {
-        consentCard.hidden = true;
-      }, 280);
-    }
-
-    function openConsentModal() {
-      const current = getStoredConsent();
-      if (analyticsToggle) analyticsToggle.checked = !!current?.analytics;
-      if (externalToggle) externalToggle.checked = !!current?.external;
-
-      if (!consentModal) return;
-      consentModal.hidden = false;
-      requestAnimationFrame(() => {
-        consentModal.classList.add("is-visible");
-      });
-      document.body.classList.add("consent-modal-open");
-    }
-
-    function closeConsentModal() {
-      if (!consentModal) return;
-      consentModal.classList.remove("is-visible");
-      setTimeout(() => {
-        consentModal.hidden = true;
-      }, 220);
-      document.body.classList.remove("consent-modal-open");
-    }
-
-    function applyConsent(consent) {
-      document.documentElement.dataset.consentAnalytics = consent.analytics ? "granted" : "denied";
-      document.documentElement.dataset.consentExternal = consent.external ? "granted" : "denied";
-
-      if (consent.analytics) {
-        loadAnalyticsServices();
+      function getStoredConsent() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return null;
+          const parsed = JSON.parse(raw);
+          if (!parsed || parsed.version !== CONSENT_VERSION) return null;
+          return parsed;
+        } catch (error) {
+          return null;
+        }
       }
 
-      if (consent.external) {
-        enableExternalMedia();
-      }
-    }
+      function saveConsent(consent) {
+        const payload = {
+          version: CONSENT_VERSION,
+          necessary: true,
+          analytics: !!consent.analytics,
+          external: !!consent.external,
+          updatedAt: new Date().toISOString()
+        };
 
-    function loadAnalyticsServices() {
-      if (window.__urformAnalyticsLoaded) return;
-      window.__urformAnalyticsLoaded = true;
-
-      /* 
-        HIER SPÄTER ANALYTICS LADEN, z. B.:
-
-        const script = document.createElement("script");
-        script.src = "https://example.com/analytics.js";
-        script.async = true;
-        document.head.appendChild(script);
-      */
-    }
-
-    function enableExternalMedia() {
-      if (window.__urformExternalLoaded) return;
-      window.__urformExternalLoaded = true;
-
-      /*
-        HIER SPÄTER EXTERNE MEDIEN FREISCHALTEN, z. B.:
-        - YouTube iframes nachladen
-        - Karten einblenden
-        - Feeds aktivieren
-      */
-    }
-
-    function initConsent() {
-      const stored = getStoredConsent();
-
-      if (!stored) {
-        showConsentCard();
-        return;
-      }
-
-      applyConsent(stored);
-    }
-
-    cardActions.forEach((button) => {
-      button.addEventListener("click", () => {
-        const action = button.getAttribute("data-consent-action");
-
-        if (action === "necessary") {
-          saveConsent({ analytics: false, external: false });
-        }
-
-        if (action === "all") {
-          saveConsent({ analytics: true, external: true });
-        }
-      });
-    });
-
-    saveActions.forEach((button) => {
-      button.addEventListener("click", () => {
-        const action = button.getAttribute("data-consent-save");
-
-        if (action === "necessary") {
-          saveConsent({ analytics: false, external: false });
-        }
-
-        if (action === "all") {
-          saveConsent({ analytics: true, external: true });
-        }
-
-        if (action === "selection") {
-          saveConsent({
-            analytics: !!analyticsToggle?.checked,
-            external: !!externalToggle?.checked
-          });
-        }
-      });
-    });
-
-    openButtons.forEach((button) => {
-      button.addEventListener("click", openConsentModal);
-    });
-
-    closeButtons.forEach((button) => {
-      button.addEventListener("click", closeConsentModal);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+        window.dispatchEvent(new CustomEvent("urform:consent-updated", { detail: payload }));
+        applyConsent(payload);
+        hideConsentCard();
         closeConsentModal();
       }
-    });
 
-    initConsent();
-  })();
-</script>
+      function showConsentCard() {
+        if (!consentCard) return;
+        consentCard.hidden = false;
+        requestAnimationFrame(() => {
+          consentCard.classList.add("is-visible");
+        });
+      }
+
+      function hideConsentCard() {
+        if (!consentCard) return;
+        consentCard.classList.remove("is-visible");
+        setTimeout(() => {
+          consentCard.hidden = true;
+        }, 280);
+      }
+
+      function openConsentModal() {
+        const current = getStoredConsent();
+        if (analyticsToggle) analyticsToggle.checked = !!current?.analytics;
+        if (externalToggle) externalToggle.checked = !!current?.external;
+
+        if (!consentModal) return;
+        consentModal.hidden = false;
+        requestAnimationFrame(() => {
+          consentModal.classList.add("is-visible");
+        });
+        document.body.classList.add("consent-modal-open");
+      }
+
+      function closeConsentModal() {
+        if (!consentModal) return;
+        consentModal.classList.remove("is-visible");
+        setTimeout(() => {
+          consentModal.hidden = true;
+        }, 220);
+        document.body.classList.remove("consent-modal-open");
+      }
+
+      function applyConsent(consent) {
+        document.documentElement.dataset.consentAnalytics = consent.analytics ? "granted" : "denied";
+        document.documentElement.dataset.consentExternal = consent.external ? "granted" : "denied";
+      }
+
+      function initConsent() {
+        const stored = getStoredConsent();
+
+        if (!stored) {
+          showConsentCard();
+          return;
+        }
+
+        applyConsent(stored);
+      }
+
+      cardActions.forEach((button) => {
+        button.addEventListener("click", () => {
+          const action = button.getAttribute("data-consent-action");
+
+          if (action === "necessary") {
+            saveConsent({ analytics: false, external: false });
+          }
+
+          if (action === "all") {
+            saveConsent({ analytics: true, external: true });
+          }
+        });
+      });
+
+      saveActions.forEach((button) => {
+        button.addEventListener("click", () => {
+          const action = button.getAttribute("data-consent-save");
+
+          if (action === "necessary") {
+            saveConsent({ analytics: false, external: false });
+          }
+
+          if (action === "all") {
+            saveConsent({ analytics: true, external: true });
+          }
+
+          if (action === "selection") {
+            saveConsent({
+              analytics: !!analyticsToggle?.checked,
+              external: !!externalToggle?.checked
+            });
+          }
+        });
+      });
+
+      openButtons.forEach((button) => {
+        button.addEventListener("click", openConsentModal);
+      });
+
+      closeButtons.forEach((button) => {
+        button.addEventListener("click", closeConsentModal);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeConsentModal();
+        }
+      });
+
+      initConsent();
+    })();
+  </script>
 </body>
 </html>

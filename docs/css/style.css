@@ -199,6 +199,34 @@ header img,
 }
 
 /* ===== STARTSEITE ===== */
+/* ===== HERO BRAND (NEU) ===== */
+.panel-content-brand {
+  max-width: 900px;
+}
+
+.hero-brand-logo {
+  display: block;
+  width: min(520px, 70vw);
+  height: auto;
+  margin: 0 auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.98;
+}
+
+.hero-brand-text {
+  max-width: 560px;
+  margin: 28px auto 0;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+}
+
+/* optional kleine Feinjustierung für TERRA Section */
+.terra-panel .panel-split-content .eyebrow {
+  color: rgba(24, 24, 24, 0.55);
+}
 .snap-container {
   width: 100%;
 }
