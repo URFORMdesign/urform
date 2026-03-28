@@ -209,7 +209,7 @@ header img,
   width: min(520px, 70vw);
   height: auto;
   margin: 0 auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(0);
   opacity: 0.98;
 }
 
