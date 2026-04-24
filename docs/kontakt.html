@@ -4,16 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kontakt – URFORM</title>
-  <meta
-    name="description"
-    content="Kontakt zu URFORM – Produktanfragen und Informationen."
-  />
+  <meta name="description" content="Kontakt zu URFORM – Produktanfragen und Informationen." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="subpage">
@@ -49,11 +43,7 @@
     <section class="contact-section">
       <div class="contact-grid">
         <div class="contact-copy">
-          <img
-            src="images/Logo_svg.svg"
-            alt="URFORM"
-            class="brand-mark-side"
-          />
+          <img src="images/Logo.svg" alt="URFORM" class="brand-mark-side" />
           <h2>URFORM</h2>
           <p>Designprodukte für Haus und Garten aus Metall.</p>
 
@@ -67,11 +57,13 @@
         <div class="contact-form-wrap">
           <form
             class="contact-form"
+            id="contact-form"
             action="https://formsubmit.co/info@urform.design"
             method="POST"
           >
             <input type="hidden" name="_subject" value="Neue Anfrage über urform.design" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_next" value="https://urform.design/kontakt.html?sent=1" />
 
             <div class="form-row">
@@ -116,25 +108,14 @@
     <div class="form-success-backdrop" data-close-success></div>
 
     <div class="form-success-panel" role="dialog" aria-modal="true" aria-labelledby="success-title">
-      <button
-        type="button"
-        class="form-success-close"
-        aria-label="Schließen"
-        data-close-success
-      >
-        ×
-      </button>
-
+      <button type="button" class="form-success-close" aria-label="Schließen" data-close-success>×</button>
       <p class="form-success-kicker">ANFRAGE GESENDET</p>
       <h2 id="success-title">Vielen Dank.</h2>
       <p>
         Ihre Nachricht wurde erfolgreich übermittelt.
         Wir melden uns schnellstmöglich bei Ihnen zurück.
       </p>
-
-      <button type="button" class="btn btn-dark" data-close-success>
-        SCHLIESSEN
-      </button>
+      <button type="button" class="btn btn-dark" data-close-success>SCHLIESSEN</button>
     </div>
   </div>
 
@@ -142,21 +123,13 @@
     <div class="footer-inner footer-grid">
       <div class="footer-brand">
         <p class="footer-logo">URFORM</p>
-        <p class="footer-claim">
-          Designprodukte für Haus und Garten aus Metall.
-        </p>
+        <p class="footer-claim">Designprodukte für Haus und Garten aus Metall.</p>
       </div>
 
       <div class="footer-nav">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        <button
-          type="button"
-          class="footer-link-button"
-          data-open-consent
-          aria-haspopup="dialog"
-          aria-controls="consent-preferences"
-        >
+        <button type="button" class="footer-link-button" data-open-consent>
           Datenschutz-Einstellungen
         </button>
       </div>
@@ -186,13 +159,13 @@
     })();
 
     (() => {
+      const form = document.getElementById("contact-form");
       const modal = document.getElementById("form-success-modal");
       const closeButtons = document.querySelectorAll("[data-close-success]");
       const params = new URLSearchParams(window.location.search);
 
       function openSuccessModal() {
         if (!modal) return;
-
         modal.hidden = false;
 
         requestAnimationFrame(() => {
@@ -211,13 +184,21 @@
           modal.hidden = true;
         }, 220);
 
+        sessionStorage.removeItem("urform_form_submitted");
+
         if (window.history.replaceState) {
           const cleanUrl = window.location.origin + window.location.pathname;
           window.history.replaceState({}, document.title, cleanUrl);
         }
       }
 
-      if (params.get("sent") === "1") {
+      if (form) {
+        form.addEventListener("submit", () => {
+          sessionStorage.setItem("urform_form_submitted", "1");
+        });
+      }
+
+      if (params.get("sent") === "1" || sessionStorage.getItem("urform_form_submitted") === "1") {
         openSuccessModal();
       }
 
