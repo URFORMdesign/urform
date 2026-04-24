@@ -862,6 +862,94 @@ header img,
   image-rendering: -webkit-optimize-contrast;
   margin-bottom: 24px;
 }
+/* ===== FORM SUCCESS MODAL ===== */
+.success-modal-open {
+  overflow: hidden;
+}
+
+.form-success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 160;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.form-success-modal.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-success-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.form-success-panel {
+  position: relative;
+  width: min(560px, calc(100vw - 32px));
+  margin: min(18vh, 140px) auto 0;
+  padding: 42px 40px 38px;
+  border-radius: 28px;
+  background: rgba(243, 240, 234, 0.96);
+  color: var(--text);
+  border: 1px solid rgba(24, 24, 24, 0.08);
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.18);
+  transform: translateY(16px);
+  transition: transform 0.22s ease;
+}
+
+.form-success-modal.is-visible .form-success-panel {
+  transform: translateY(0);
+}
+
+.form-success-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(24, 24, 24, 0.06);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.form-success-kicker {
+  margin: 0 0 16px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(24, 24, 24, 0.52);
+}
+
+.form-success-panel h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 280;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.form-success-panel p {
+  max-width: 440px;
+  margin: 22px 0 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.form-success-panel .btn {
+  margin-top: 32px;
+}
 
 /* ===== LEGAL ===== */
 .legal-section {
@@ -1534,6 +1622,16 @@ header img,
   .footer-link-button {
     font-size: 0.7rem;
   }
+  .form-success-panel {
+  width: calc(100vw - 24px);
+  margin-top: 96px;
+  padding: 34px 24px 30px;
+  border-radius: 24px;
+}
+
+.form-success-panel p {
+  font-size: 0.98rem;
+}
 }
 
 @media (max-width: 420px) {
